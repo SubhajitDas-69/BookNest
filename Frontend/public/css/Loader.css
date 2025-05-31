@@ -1,0 +1,10 @@
+.LoaderContainer{
+    display: flex;
+    min-height: 100vh;
+}
+.Loader{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

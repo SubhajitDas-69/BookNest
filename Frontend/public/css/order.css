@@ -1,0 +1,319 @@
+.orderSummary{
+        width: 90%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem !important;
+    /* margin: auto; */
+    border: none;
+    box-shadow: 8px 6px 13px black;
+}
+.orderHistory{
+    width: 83%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem !important;
+    margin: auto;
+    border: none;
+    box-shadow: 8px 6px 13px black;
+}
+.orders{
+    width: 100%;
+}
+.BuyProduct{
+    padding: 1rem;
+    width: 35%;
+    height: 18rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+    box-shadow: 8px 6px 13px black;
+}
+.BuyProduct h4{
+    display: flex;
+    justify-content: space-between;
+}
+.Payment-btn{
+    margin-top: 7rem !important;
+    width: 100%;
+}
+.summaryDiv{
+    display: flex;
+    padding: 0 4rem;
+}
+#orderDetails{
+    display: flex;
+        justify-content: space-between;
+        /* background-color: red; */
+        width: 40%;
+        gap: 3rem;
+
+}
+.itemImg{
+    width: 6.5rem;
+    /* background-color: black; */
+}
+.itemImg img{
+    width: 100%;
+    height: 8rem;
+}
+.itemDetails{
+    width: 70%;
+    /* background-color: aqua; */
+    text-align: center;
+}
+.shippingDetails{
+    width: 25%;
+    /* background-color: blue; */
+}
+#order-header{
+    /* background-color: blue; */
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    height: 3rem;
+    border-bottom: 2px solid black;
+    box-shadow: 2px 3px 6px #3f3c3c;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem 2rem !important;
+    display: flex;
+    justify-content: space-between;
+
+}
+/* #order-header b{
+    margin: 0 11rem 0 2rem;
+} */
+.content{
+    padding: 0rem 0 1rem 0 !important;
+}
+.status{
+       width: 14%;
+    text-align: center;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    color: white;
+    margin-right: 7rem;
+}
+.status form{
+    display: flex; align-items: center; gap: 10px;
+}
+.status form select{
+    /* background-color: red; */
+    text-align: center;
+    border-radius: 1rem;
+    height: 2rem;
+    border: none;
+}
+.status form button {
+    border: none;
+    color: green;
+    background-color: white;
+}
+.placed{
+    background-color: rgb(255, 213, 0);
+    color: white;
+  
+}
+.Confirmed{
+    background-color: skyblue;
+    color: white;
+}
+.outOfdelivary{
+    background-color: green;
+    color: white;
+}
+.delivered{
+    background-color: rgb(120, 197, 3);
+    color: white;
+}
+.cancelled{
+    background-color: red;
+    color: white;
+}
+.pending{
+    background-color: grey;
+    color: white;
+}
+
+#section1{
+    width: 29%;
+    /* background: blue; */
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+}
+#section2{
+    /* background-color: red; */
+        width: 30%;
+}
+#section3{
+    /* background-color: aqua; */
+    width: 25%;
+    text-align: right;
+}
+.section4{
+    text-align: right;
+}
+.emptyOrder{
+    text-align: center;
+    /* margin-top: 8rem; */
+    width: 39%;
+    margin: 17rem auto;
+    color: gray;
+}
+.orderDetails{
+  display: flex;
+  width: 69%;
+  margin: auto;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 2rem;
+}
+.Item{
+    display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.itemCard{
+  width: 65%;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 3px 7px 12px;
+}
+.itemImage{
+    height: 8rem;
+  width: 7rem;
+}
+.itemImage img{
+     height: 100%;
+  width: 100%;
+}
+.orderBackground{
+    background-color: rgb(238, 233, 233);
+    width: 100%;
+}
+.shippingInfo{
+  background-color: white;
+  padding: 1rem;
+  height: 50vh;
+  box-shadow: 2px 3px 5px black;
+  width: 31%;
+}
+@media only screen and (max-width: 1200px) {
+    .orderDetails {
+    width: 96%;
+    }
+    .summaryDiv {
+    flex-direction: column;
+}
+.BuyProduct {
+    width: 20rem;
+    margin-top: 2rem;
+}
+}
+
+@media only screen and (max-width: 940px) {
+    #section3, .section4 {
+    display: none;
+}
+}
+.deleteOrder{
+    width: 5rem
+}
+@media only screen and (max-width: 800px) {
+     .orderDetails {
+    flex-direction: column;
+    }
+    .itemCard {
+    width: 100%;
+    }
+    .shippingInfo {
+    width: 100%;
+}
+  .orderHistory {
+    width: 100%;
+    padding: 1rem 0 1rem 0!important;
+    flex-direction: column;
+}
+#order-header{
+    display: none;
+}
+#orderDetails {
+   gap: 0;
+   justify-content: right;
+   width: 100%;
+}
+.status{
+    width: 70%;
+    margin-right: 0;
+}
+.status select{
+    width: 100%;
+}
+.deleteOrder{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    background-color: red;
+}
+.deleteOrder Button{
+    width: 100% !important;
+}
+.itemDetails {
+    width: 71%;
+}
+.shippingDetails {
+    width: 74%;
+}
+.aboutItem h4{
+    font-size: 17px;
+}
+}
+@media only screen and (max-width: 530px) {
+    .orderSummary{
+        flex-direction: column;
+        width: 100%;
+    }
+    .summaryDiv{
+        padding: 1rem;
+    }
+    .status{
+    width: 100%;
+    margin-right: 0;
+    margin-top: 1rem;
+}
+.status select{
+    width: 16rem;
+}
+    #orderDetails {
+   gap: 0;
+   justify-content: right;
+   width: 20rem;
+}
+    .itemDetails {
+            width: 14rem;
+}
+.deleteOrder{
+    width: 20rem;
+    display: flex
+;
+    justify-content: center;
+    margin: auto;
+    background-color: red;
+}
+.deleteOrder Button{
+    width: 100% !important;
+}
+}
+
+@media only screen and (max-width: 400px) {
+    .orderHistory{
+        margin: auto;
+    }
+}

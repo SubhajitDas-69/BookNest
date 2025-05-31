@@ -1,0 +1,268 @@
+.card{
+  /* margin: auto !important; */
+  padding: 0 1rem 1rem !important;
+  width: 18.9rem;
+  border: 2px solid black;
+  box-shadow: 2px 3px 5px black;
+}
+.show-page{
+  padding: 0 5rem 5rem !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* height: 32rem; */
+}
+.show-page-img{
+  /* background-color: burlywood; */
+  text-align: center;
+  display: inline-block;
+  padding-top: 2rem !important;
+  width: 100% !important;
+}
+.show-page-img img{
+  width: 62%;
+  height: 80vh !important;
+    /* height: 29rem; */
+  /* height: 45rem; */
+  /* position: fixed;
+  left: 18rem; */
+}
+.book-details{
+  /* background-color: red; */
+  padding-left: 6rem !important;
+  display: inline-block;
+  width: 88%;
+  padding-bottom: 1rem !important;
+}
+.title{
+  font-size: 2.2rem;
+  font-weight: 600;
+  padding-top: 2rem !important;
+}
+.text{
+  font-size: 23px;
+  line-height: 4rem;
+}
+.des{
+  width: 95% !important;
+  font-size: 1.3rem;
+  padding: 1rem !important;
+  border-radius: 10px;
+  margin-top: 2rem !important;
+  overflow-y: scroll;;
+  max-height: 20rem;
+  border: 2px solid black;
+  box-shadow: 2px 3px 5px black;
+}
+.show-page-add-to-cart{
+  background-color: white;
+  border: 2px solid rgb(237, 77, 104);
+  width: 95%;
+  height: 7vh;
+  font-size: 18px;
+  margin-top: 2rem !important;
+  color: rgb(237, 77, 104);
+  border-radius: 5px;
+}
+.button{
+  background-color: rgb(235, 49, 80);
+  border: 2px solid rgb(237, 77, 104);
+  width: 95%;
+  height: 7vh;
+  font-size: 18px;
+  margin-top: 1rem !important;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.review-div{
+  width: 69%;
+  margin: auto !important;
+  height: 38vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 3rem;
+  font-size: 22px;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* margin-top: 2rem !important; */
+}
+.review-btn{
+  background-color: black;
+  width: 8rem;
+  height: 3rem;
+  font-size: 17px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.review-btn:hover{
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+.popup {
+  /* display: none; */
+  display: flex;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.popup-content {
+  margin-top: 4rem;
+  background: white;
+  padding: 2rem !important;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 36rem !important;
+}
+.popup-content label{
+  text-align: left;
+  margin: 1rem 0 1rem 0;
+  font-size: 20px;
+
+}
+.popup-content input{
+  padding: 1rem;
+  font-size: 16px;
+}
+.popup-content textarea{
+  font-size: 16px;
+  padding-left: 1rem;
+}
+#SUBMIT{
+  height: 3rem;
+  margin: 1rem 0 1rem 0;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+#Cancel-btn{
+  height: 3rem;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  line-height: 2.5rem;
+  /* position: absolute;
+    top: 32rem;
+    left: 31.6rem;
+    width: 32rem; */
+}
+.reviews-div{
+      display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 69%;
+    margin: auto;
+    row-gap: 1rem;
+    column-gap: 1rem;
+
+}
+  .d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1106px) {
+  .reviews-div{
+      grid-template-columns: repeat(3, 1fr);
+      width: 92%;
+  }
+  .card{
+  width: 100%;
+}
+.show-page {
+    padding: 0 2rem 5rem !important;
+}
+.book-details {
+    width: 100%;
+    padding-left: 0rem !important;
+}
+.show-page-img img{
+  height: 50vh !important;
+  width: 95%;
+}
+.review-div {
+  width: 92%;
+  height: 25vh;
+}
+
+}
+@media only screen and (max-width: 900px) {
+  .review-div {
+  width: 90%;
+  
+}
+ .reviews-div{
+        grid-template-columns: repeat(3, 1fr);
+        width: 90%;
+  }
+.show-page-img img{
+  height: 55vh !important;
+  width: 90%;
+}
+
+}
+@media only screen and (max-width: 700px) {
+ .reviews-div{
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+  }
+  .show-page {
+    grid-template-columns: repeat(1, 1fr);
+}
+.show-page-img{
+  width: 15rem !important;
+  margin: auto;
+}
+.show-page-img img{
+  height: 55vh !important;
+}
+
+}
+@media only screen and (max-width: 600px) {
+ .popup-content {
+    width: 100% !important;
+}
+
+}
+@media only screen and (max-width: 500px) {
+ .reviews-div{
+        grid-template-columns: repeat(1, 1fr);
+        width: 90%;
+  }
+  .show-page-img img{
+  height: 40vh !important;
+}
+}
+
+@media only screen and (max-width: 298px) {
+.show-page-img{
+  width: 10rem !important;
+  margin: auto;
+}
+.show-page-img img{
+  height: 40vh !important;
+}
+  
+
+}
