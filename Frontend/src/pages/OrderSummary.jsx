@@ -37,10 +37,10 @@ export default function OrderSummary({ product, selectedAddress, checkout }) {
             body: JSON.stringify({ selectedAddress })
         };
         if (checkout === "buyNow") {
-            url = `https://booknest-cnfb.onrender.com/orders/checkout/buyNow/${product._id}`;
+            url = `https://booknest-3ev5.onrender.com/orders/checkout/buyNow/${product._id}`;
             
         } else {
-            url = `https://booknest-cnfb.onrender.com/orders/create`;
+            url = `https://booknest-3ev5.onrender.com/orders/create`;
         }
         try {
             const response = await fetch(url, options);

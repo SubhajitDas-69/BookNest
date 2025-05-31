@@ -8,7 +8,7 @@ import SidebarLayout from "../component/SidebarLayout";
 export default function OrderHistory() {
     const { currUser } = useAuth();
     const [orders, setOrders] = useState([]);
-    const url = "https://booknest-cnfb.onrender.com/orders";
+    const url = "https://booknest-3ev5.onrender.com/orders";
 
     useEffect(() => {
         async function fetchOrders() {

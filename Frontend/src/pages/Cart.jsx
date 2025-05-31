@@ -12,7 +12,7 @@ export default function Cart() {
         async function fetchCart() {
             try {
                 setLoading(true);
-                const res = await fetch("https://booknest-cnfb.onrender.com/cart", {
+                const res = await fetch("https://booknest-3ev5.onrender.com/cart", {
                     method: "GET",
                     credentials: "include",
                 });
@@ -44,7 +44,7 @@ export default function Cart() {
 
     const updateQuantity = async (itemId, action) => {
         try {
-            const res = await fetch(`https://booknest-cnfb.onrender.com/cart/${itemId}`, {
+            const res = await fetch(`https://booknest-3ev5.onrender.com/cart/${itemId}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -54,7 +54,7 @@ export default function Cart() {
             });
             const data = await res.json();
             if (res.ok) {
-                const updated = await fetch("https://booknest-cnfb.onrender.com/cart", {
+                const updated = await fetch("https://booknest-3ev5.onrender.com/cart", {
                     method: "GET",
                     credentials: "include",
                 });
@@ -68,12 +68,12 @@ export default function Cart() {
 
     const removeItem = async (itemId) => {
         try {
-            await fetch(`https://booknest-cnfb.onrender.com/cart/${itemId}`, {
+            await fetch(`https://booknest-3ev5.onrender.com/cart/${itemId}`, {
                 method: "DELETE",
                 credentials: "include",
             });
 
-            const updated = await fetch("https://booknest-cnfb.onrender.com/cart", {
+            const updated = await fetch("https://booknest-3ev5.onrender.com/cart", {
                 method: "GET",
                 credentials: "include",
             });

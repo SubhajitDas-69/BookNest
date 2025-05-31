@@ -19,7 +19,7 @@ export default function EditAddress() {
   useEffect(() => {
     async function fetchAddress() {
       try {
-        const res = await fetch(`https://booknest-cnfb.onrender.com/address/${id}/edit`, {
+        const res = await fetch(`https://booknest-3ev5.onrender.com/address/${id}/edit`, {
           credentials: "include",
           method: "GET"
         });
@@ -46,7 +46,7 @@ export default function EditAddress() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`https://booknest-cnfb.onrender.com/address/${id}`, {
+    const res = await fetch(`https://booknest-3ev5.onrender.com/address/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

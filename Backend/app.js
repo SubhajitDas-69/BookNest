@@ -31,7 +31,7 @@ async function main(){
 
 app.use(express.json());
 app.use(cors({
-    origin: "https://book-nest-frontend-omega.vercel.app",
+    origin: "https://book-nest-sigma-blond.vercel.app",
     credentials: true
 }));
 

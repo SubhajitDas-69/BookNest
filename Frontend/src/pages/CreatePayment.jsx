@@ -9,7 +9,7 @@ export default function CreatePayment() {
   useEffect(() => {
     async function redirectToRazorpay() {
       try {
-        const res = await fetch(`https://booknest-cnfb.onrender.com/payment/${orderId}/create-payment-link`, {
+        const res = await fetch(`https://booknest-3ev5.onrender.com/payment/${orderId}/create-payment-link`, {
           credentials: "include",
         });
 

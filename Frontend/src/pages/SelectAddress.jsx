@@ -18,8 +18,8 @@ export default function SelectAddress() {
     async function fetchData() {
       try {
         let url = id
-          ? `https://booknest-cnfb.onrender.com/address/${id}?checkout=${checkout}`
-          : `https://booknest-cnfb.onrender.com/address?checkout=${checkout}`;
+          ? `https://booknest-3ev5.onrender.com/address/${id}?checkout=${checkout}`
+          : `https://booknest-3ev5.onrender.com/address?checkout=${checkout}`;
 
         const res = await fetch(url, { credentials: "include" });
         const data = await res.json();

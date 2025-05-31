@@ -53,7 +53,7 @@ export default function NewProduct() {
         }
 
         try {
-            const res = await fetch("https://booknest-cnfb.onrender.com/products", {
+            const res = await fetch("https://booknest-3ev5.onrender.com/products", {
                 method: "POST",
                 credentials: "include",
                 body: data

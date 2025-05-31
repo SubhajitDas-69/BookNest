@@ -7,7 +7,7 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://booknest-cnfb.onrender.com/api/current-user', {
+        fetch('https://booknest-3ev5.onrender.com/api/current-user', {
             method: 'GET',
             credentials: 'include',
         })

@@ -11,7 +11,7 @@ export default function OrderConfirm() {
   useEffect(() => {
     async function fetchOrder() {
       try {
-        const res = await fetch(`https://booknest-cnfb.onrender.com/orders/confirm/${orderId}`, {
+        const res = await fetch(`https://booknest-3ev5.onrender.com/orders/confirm/${orderId}`, {
           credentials: "include",
         });
         const data = await res.json();

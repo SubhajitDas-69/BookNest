@@ -9,7 +9,7 @@ export default function AllAddress() {
   useEffect(() => {
     async function fetchAddresses() {
       try {
-        const res = await fetch("https://booknest-cnfb.onrender.com/address/all", {
+        const res = await fetch("https://booknest-3ev5.onrender.com/address/all", {
           credentials: "include",
         });
 
@@ -29,7 +29,7 @@ export default function AllAddress() {
 
   const handleDelete = async (addressId) => {
     try {
-      const res = await fetch(`https://booknest-cnfb.onrender.com/address/${addressId}`, {
+      const res = await fetch(`https://booknest-3ev5.onrender.com/address/${addressId}`, {
         method: "DELETE",
         credentials: "include",
       });

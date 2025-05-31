@@ -10,8 +10,8 @@ export default function Product() {
   const category = queryParams.get("category");
 
   const url = category
-    ? `https://booknest-cnfb.onrender.com/products?category=${category}`
-    : `https://booknest-cnfb.onrender.com/products`;
+    ? `https://booknest-3ev5.onrender.com/products?category=${category}`
+    : `https://booknest-3ev5.onrender.com/products`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +28,7 @@ export default function Product() {
 
   const handleDelete = async (id) => {
   try {
-    const deleteUrl = `https://booknest-cnfb.onrender.com/products/${id}`;
+    const deleteUrl = `https://booknest-3ev5.onrender.com/products/${id}`;
     const res = await fetch(deleteUrl, {
       method: "DELETE",
       credentials: "include"

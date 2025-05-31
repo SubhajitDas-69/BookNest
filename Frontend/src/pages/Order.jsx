@@ -13,7 +13,7 @@ export default function Order() {
   const [alert, setAlert] = useState({ msg: '', severity: '' });
   const fetchOrderItem = async () => {
     try {
-      const res = await fetch(`https://booknest-cnfb.onrender.com/orders/item/${itemId}`, {
+      const res = await fetch(`https://booknest-3ev5.onrender.com/orders/item/${itemId}`, {
         credentials: "include",
         method: "GET",
       });
@@ -33,7 +33,7 @@ export default function Order() {
     try {
       setLoading(true);
       const res = await fetch(
-        `https://booknest-cnfb.onrender.com/orders/${itemId}/cancel`,
+        `https://booknest-3ev5.onrender.com/orders/${itemId}/cancel`,
         {
           method: "PUT",
           credentials: "include",

@@ -21,7 +21,7 @@ export default function EditProductForm() {
   const [validated, setValidated] = useState(false);
 
   useEffect(() => {
-    fetch(`https://booknest-cnfb.onrender.com/products/${id}`)
+    fetch(`https://booknest-3ev5.onrender.com/products/${id}`)
       .then(res => res.json())
       .then(data => {
         if (data.product) {
@@ -75,7 +75,7 @@ export default function EditProductForm() {
     }
 
     try {
-      const response = await fetch(`https://booknest-cnfb.onrender.com/products/${id}`, {
+      const response = await fetch(`https://booknest-3ev5.onrender.com/products/${id}`, {
         method: 'PUT',
         credentials: 'include',
         body: formData,

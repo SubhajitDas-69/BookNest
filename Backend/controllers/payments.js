@@ -23,7 +23,7 @@ module.exports.createPaymentLink = async (req, res, next) => {
           email: true
         },
         reminder_enable: true,
-        callback_url: `https://book-nest-frontend-omega.vercel.app/orders/confirm/${orderId}`,
+        callback_url: `https://book-nest-sigma-blond.vercel.app/orders/confirm/${orderId}`,
         callback_method: "get"
       });
      return res.status(200).json({ paymentLink: paymentLink.short_url });

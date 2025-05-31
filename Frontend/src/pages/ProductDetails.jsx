@@ -21,7 +21,7 @@ export default function ProductDetails() {
     }
 
     useEffect(() => {
-        fetch(`https://booknest-cnfb.onrender.com/products/${id}`, {
+        fetch(`https://booknest-3ev5.onrender.com/products/${id}`, {
             method: 'GET',
             credentials: 'include',
         })
@@ -55,7 +55,7 @@ export default function ProductDetails() {
 
     const handleReviewSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(`https://booknest-cnfb.onrender.com/products/${id}/reviews`, {
+        const response = await fetch(`https://booknest-3ev5.onrender.com/products/${id}/reviews`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include',
@@ -74,7 +74,7 @@ export default function ProductDetails() {
     };
 
     const handleDeleteReview = async (reviewId) => {
-        const response = await fetch(`https://booknest-cnfb.onrender.com/products/${id}/reviews/${reviewId}`, {
+        const response = await fetch(`https://booknest-3ev5.onrender.com/products/${id}/reviews/${reviewId}`, {
             method: 'DELETE',
             credentials: 'include',
         });
@@ -101,7 +101,7 @@ export default function ProductDetails() {
 
     const addToCart = async () => {
         try {
-            const res = await fetch(`https://booknest-cnfb.onrender.com/cart/add/${product._id}`, {
+            const res = await fetch(`https://booknest-3ev5.onrender.com/cart/add/${product._id}`, {
                 method: "POST",
                 credentials: "include",
             });

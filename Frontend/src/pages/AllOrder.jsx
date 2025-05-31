@@ -9,7 +9,7 @@ const AllOrder = () => {
   const { currUser } = useAuth();
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch('https://booknest-cnfb.onrender.com/orders/all', {
+    fetch('https://booknest-3ev5.onrender.com/orders/all', {
       method: 'GET',
       credentials: 'include'
     })
@@ -24,7 +24,7 @@ const AllOrder = () => {
 
   const updateStatus = async (orderId, itemId, status) => {
     try {
-      const res = await fetch(`https://booknest-cnfb.onrender.com/orders/status/${orderId}`, {
+      const res = await fetch(`https://booknest-3ev5.onrender.com/orders/status/${orderId}`, {
         method: 'PUT',
         credentials: 'include',
         headers: {
@@ -57,7 +57,7 @@ const AllOrder = () => {
 
   const deleteOrderItem = async (orderId, itemId) => {
     try {
-      const res = await fetch(`https://booknest-cnfb.onrender.com/orders/${orderId}/items/${itemId}`, {
+      const res = await fetch(`https://booknest-3ev5.onrender.com/orders/${orderId}/items/${itemId}`, {
         method: 'DELETE',
         credentials: 'include',
         headers: {

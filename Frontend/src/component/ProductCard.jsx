@@ -6,7 +6,7 @@ export default function ProductCard({ props, onDelete }) {
   const { currUser} = useAuth();
   const addToCart = async () => {
     try {
-      const res = await fetch(`https://booknest-cnfb.onrender.com/cart/add/${props._id}`, {
+      const res = await fetch(`https://booknest-3ev5.onrender.com/cart/add/${props._id}`, {
         method: "POST",
         credentials: "include",
       });

@@ -6,7 +6,7 @@ export default function Sidebar() {
     const { currUser, setCurrUser, loading } = useAuth();
     async function logout() {
         try {
-            const res = await fetch("https://booknest-cnfb.onrender.com/logout", {
+            const res = await fetch("https://booknest-3ev5.onrender.com/logout", {
                 credentials: "include",
                 method: "GET",
             });

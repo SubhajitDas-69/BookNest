@@ -18,7 +18,7 @@ export default function Signup() {
     setSuccessMessage('');
 
     try {
-      const response = await fetch('https://booknest-cnfb.onrender.com/signup', {
+      const response = await fetch('https://booknest-3ev5.onrender.com/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

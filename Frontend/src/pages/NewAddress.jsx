@@ -26,7 +26,7 @@ export default function NewAddress() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://booknest-cnfb.onrender.com/address/create", {
+      const res = await fetch("https://booknest-3ev5.onrender.com/address/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
