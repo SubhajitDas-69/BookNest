@@ -26,11 +26,13 @@ export default function Navbar() {
                             </div>
                             <div className="menu navbar-nav">
                                 <ul>
+                                    {(currUser && currUser.role === "user" || !currUser) && (
                                     <Link className="nav-link" to="/">
                                         <li>
                                             Home
                                         </li>
                                     </Link>
+                                    )}
                                     <Link className="nav-link" to="/products">
                                         <li>
                                             All Products

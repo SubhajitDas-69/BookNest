@@ -2,16 +2,19 @@
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
 import { useAuth } from "./AuthContext";
+import { useState } from "react";
+import { CircularProgress } from "@mui/material";
 export default function ProductCard({ props, onDelete }) {
   const { currUser} = useAuth();
+  const [loading, setLoading] = useState(false);
   const addToCart = async () => {
     try {
       const res = await fetch(`https://booknest-3ev5.onrender.com/cart/add/${props._id}`, {
         method: "POST",
         credentials: "include",
       });
-
       const data = await res.json();
+      setLoading(true);
 
       if (res.ok) {
         alert("✅ " + data.msg);
@@ -21,7 +24,9 @@ export default function ProductCard({ props, onDelete }) {
     } catch (err) {
       console.error("Add to cart error:", err);
       alert("❌ Error adding to cart");
-    }
+    }finally{
+        setLoading(false);
+      }
   };
  
   return (
@@ -48,7 +53,10 @@ export default function ProductCard({ props, onDelete }) {
          )}
 
         {currUser && currUser.role !== 'admin' && (
-          <button className="btnControl" onClick={addToCart}>Add to cart</button>
+          <button className="btnControl" onClick={addToCart} disabled={loading}>
+          {loading ? <CircularProgress color="inherit" /> : "ADD TO CART"}
+          </button>
+          
         )}
         </div>
         

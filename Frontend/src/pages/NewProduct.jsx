@@ -64,11 +64,11 @@ export default function NewProduct() {
                 setAlert({ msg: result.msg, severity: "success" });
                 navigate(result.redirectTo || "/products");
             } else {
-                setAlert({ msg: "Failed to create product", severity: "success" });
+                setAlert({ msg: "Failed to create product", severity: "error" });
             }
         } catch (err) {
             console.error("Error:", err);
-            setAlert({ msg: "An error occurred", severity: "success" });
+            setAlert({ msg: "An error occurred", severity: "error" });
         } finally {
             setLoading(false);
         }
@@ -87,9 +87,9 @@ export default function NewProduct() {
         <SidebarLayout currUser={currUser}>
             <div className="newForm">
                 <AlertMessage alert={alert} setAlert={setAlert} />
-                <form onSubmit={handleSubmit} className="needs-validation" noValidate encType="multipart/form-data">
-                    <div className="col-6 mb-3">
-                        <label htmlFor="title" className="form-label">Enter book name</label>
+                <form onSubmit={handleSubmit} className="needs-validation" encType="multipart/form-data">
+                    <div className="col-6 mb-3 product-input">
+                        <label htmlFor="title" className="form-label">Enter product name</label>
                         <input type="text" name="title" value={formData.title} onChange={handleChange} className="form-control" required />
                         <div className="invalid-feedback">Book name should be valid.</div>
                     </div>
