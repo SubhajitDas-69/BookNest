@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
 import { useAuth } from '../component/AuthContext';
 export default function Home() {
-  const { currUser } = useAuth();
-   if (!currUser) {
+  const { currUser, loading } = useAuth();
+   if (loading) {
         return (
             <div className="LoaderContainer">
                 <div className="Loader">
