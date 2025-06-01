@@ -128,7 +128,7 @@ export default function ProductDetails() {
                 </div>
                 <div className="book-details">
                     <p className="title">{product.title}</p>
-                    <div className="price-info">
+                    <div className="price-info price-info-detail">
                         <p className="text">Rs. {product.price}</p>
                         <p>{product.discount}% off</p>
                     </div>

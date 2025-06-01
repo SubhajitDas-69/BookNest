@@ -158,6 +158,22 @@
         height: 30%;
     }
 }
+@media (max-width: 500px){
+    .flex-item {
+    padding: 0 !important;
+    gap: 1rem;
+}
+   .cart-add-del-btn {
+    width: 8rem;
+}
+.item-des {
+    font-size: 0.9rem;
+    width: 45%;
+}
+.item img {
+    height: 8rem;
+}
+}
 @media (max-width: 300px){
     .Emptycart img{
         height: 20%;

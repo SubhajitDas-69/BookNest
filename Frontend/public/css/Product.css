@@ -247,12 +247,22 @@
 }
 @media only screen and (max-width: 500px) {
  .reviews-div{
-        grid-template-columns: repeat(1, 1fr);
-        width: 90%;
+      grid-template-columns: repeat(1, 1fr);
+      width: 90%;
+  }
+  .review-div{
+      height: 35vh;
   }
   .show-page-img img{
   height: 40vh !important;
 }
+.title {
+    font-size: 1.2rem;
+}
+.price-info-detail{
+  justify-content: center;
+}
+
 }
 
 @media only screen and (max-width: 298px) {
