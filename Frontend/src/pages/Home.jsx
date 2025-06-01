@@ -1,16 +1,9 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
+import { useAuth } from '../component/AuthContext';
 export default function Home() {
-   const [showLoader, setShowLoader] = useState(false);
-  useEffect(()=>{
-      setShowLoader(true);
-      setTimeout(() => {
-        setShowLoader(false);
-      }, 2000);
-  },[]);
-
-   if (showLoader) {
+  const { currUser } = useAuth();
+   if (!currUser) {
         return (
             <div className="LoaderContainer">
                 <div className="Loader">
@@ -24,7 +17,9 @@ export default function Home() {
       <div className="header">
         <div className="header-content">
           <h1>Welcome to BookNest</h1>
+          {!currUser &&
           <p>Please Login or Sign Up</p>
+          }
           <Link to="/products">
             <button className="exp-btn">Explore</button>
           </Link>
