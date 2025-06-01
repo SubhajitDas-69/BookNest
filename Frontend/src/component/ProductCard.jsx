@@ -4,26 +4,26 @@ import Button from '@mui/material/Button';
 import { useAuth } from "./AuthContext";
 import { useState } from "react";
 import { CircularProgress } from "@mui/material";
-export default function ProductCard({ props, onDelete }) {
+export default function ProductCard({ props, onDelete, showAlert }) {
   const { currUser} = useAuth();
   const [loading, setLoading] = useState(false);
   const addToCart = async () => {
+    setLoading(true);
     try {
       const res = await fetch(`https://booknest-3ev5.onrender.com/cart/add/${props._id}`, {
         method: "POST",
         credentials: "include",
       });
       const data = await res.json();
-      setLoading(true);
 
       if (res.ok) {
-        alert("✅ " + data.msg);
+        showAlert(data.msg, "success");
       } else {
-        alert("❌ Failed to add to cart: " + (data.message || ""));
+        showAlert("Failed to add to cart: " + (data.message || ""), "error");
       }
     } catch (err) {
       console.error("Add to cart error:", err);
-      alert("❌ Error adding to cart");
+      showAlert("Error adding to cart", "error");
     }finally{
         setLoading(false);
       }

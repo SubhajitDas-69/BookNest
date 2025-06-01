@@ -2,16 +2,23 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ProductCard from "../component/ProductCard";
 import { CircularProgress } from "@mui/material";
+import AlertMessage from "../component/AlertMessage";
 
 export default function Product() {
   const [products, setProducts] = useState([]);
+  const [alert, setAlert] = useState({ msg: '', severity: '' });
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category");
 
+
   const url = category
     ? `https://booknest-3ev5.onrender.com/products?category=${category}`
     : `https://booknest-3ev5.onrender.com/products`;
+  
+  const showAlert = (msg, severity = "success") => {
+    setAlert({ msg, severity });
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,6 +28,7 @@ export default function Product() {
         setProducts(data.allProduct);
       } catch (error) {
         console.error("Failed to fetch products:", error);
+        showAlert("Failed to load products", "error");
       }
     };
     fetchData();
@@ -39,21 +47,17 @@ export default function Product() {
     if (res.ok) {
       console.log("Deleted:", data.message || "Success");
       setProducts((prev) => prev.filter((p) => p._id !== id));
+      showAlert("Product deleted", "success");
     } else {
+      showAlert("Delete failed", "error");
       console.error("Delete failed:", data.message);
     }
   } catch (error) {
+    showAlert("Error deleting product", "error");
     console.error("Error deleting product:", error);
   }
 };
-const [showLoader, setShowLoader] = useState(false);
-  useEffect(()=>{
-      setShowLoader(true);
-      setTimeout(() => {
-        setShowLoader(false);
-      }, 1500);
-  },[]);
-  if (showLoader) {
+  if (!products) {
         return (
             <div className="LoaderContainer">
                 <div className="Loader">
@@ -65,9 +69,10 @@ const [showLoader, setShowLoader] = useState(false);
 
   return (
     <div className="index-page">
+       <AlertMessage alert={alert} setAlert={setAlert} />
       <div className="index-grid">
         {products.map((product) => (
-          <ProductCard props={product} key={product._id} onDelete={handleDelete} />
+          <ProductCard props={product} key={product._id} onDelete={handleDelete} showAlert={showAlert} />
         ))}
       </div>
     </div>
