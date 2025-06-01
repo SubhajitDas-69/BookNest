@@ -15,7 +15,7 @@ export default function AlertMessage({ alert, setAlert }) {
     if (!alert?.msg) return null;
 
     return (
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', zIndex:'1000' }}>
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', zIndex:'2000' }}>
             <Alert severity={alert.severity} variant="filled" style={{ display: 'flex', justifyContent: 'center', width: '50%', position: 'fixed' }}>
                 {alert.msg}
             </Alert>
