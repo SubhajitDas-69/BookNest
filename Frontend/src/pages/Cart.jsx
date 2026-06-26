@@ -43,6 +43,20 @@ export default function Cart() {
     }, [cart]);
 
     const updateQuantity = async (itemId, action) => {
+        setCart((prevCart) => {
+            const updatedItems = prevCart.items.map((item) => {
+                if (item.item._id === itemId) {
+                    return {
+                        ...item,
+                        quantity: action === "increase"
+                            ? item.quantity + 1
+                            : item.quantity - 1
+                    };
+                }
+                return item;
+            });
+            return { ...prevCart, items: updatedItems };
+        });
         try {
             const res = await fetch(`https://booknest-3ev5.onrender.com/cart/${itemId}`, {
                 method: "PUT",
@@ -63,6 +77,21 @@ export default function Cart() {
             }
         } catch (err) {
             console.error("Update failed", err);
+            // Rollback if server fails
+            setCart((prevCart) => {
+                const rollbackItems = prevCart.items.map((item) => {
+                    if (item.item._id === itemId) {
+                        return {
+                            ...item,
+                            quantity: action === "increase"
+                                ? item.quantity - 1
+                                : item.quantity + 1
+                        };
+                    }
+                    return item;
+                });
+                return { ...prevCart, items: rollbackItems };
+            });
         }
     };
 
