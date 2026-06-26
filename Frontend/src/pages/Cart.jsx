@@ -174,7 +174,7 @@ export default function Cart() {
                                     </>
                                 )}
                                 {updatingItem === cartItem.item._id ? (
-                                    <CircularProgress size={14} thickness={5} color="secondary" />
+                                    <CircularProgress size={14} thickness={8} color="secondary" />
                                 ) : (
                                     <span>{cartItem.quantity}</span>
                                 )}
