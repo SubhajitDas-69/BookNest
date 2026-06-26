@@ -7,7 +7,7 @@ export default function Cart() {
     const [totalQuantity, setTotalQuantity] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
     const [loading, setLoading] = useState(true);
-    const [updatingItem, setUpdatingItem] = useState(null);
+    const [updatingItem, setUpdatingItem] = useState(null); 
 
     useEffect(() => {
         async function fetchCart() {
@@ -117,7 +117,7 @@ export default function Cart() {
             console.error("Delete failed", err);
         }
     };
-    if (loading) {
+     if (loading || updatingItem) {
         return (
             <div className="LoaderContainer">
                 <div className="Loader">
@@ -138,7 +138,7 @@ export default function Cart() {
     return (
         <div className="cart">
             {loading &&
-                <div></div>
+            <div></div>
             }
             <div className="cart-items">
                 <div id="cart-title">
@@ -163,27 +163,23 @@ export default function Cart() {
                                     </button>
                                 )}
                                 {cartItem.quantity > 1 && (
-                                    <button
-                                        onClick={() => updateQuantity(cartItem.item._id, "decrease")}
-                                        disabled={updatingItem === cartItem.item._id}
-                                    >
-                                        {updatingItem === cartItem.item._id ? (
-                                            <CircularProgress size={16} />
-                                        ) : (
+                                    <>
+                                        <button
+                                            onClick={() =>
+                                                updateQuantity(cartItem.item._id, "decrease")
+                                            }
+                                        >
                                             <i className="fa-solid fa-minus"></i>
-                                        )}
-                                    </button>
+                                        </button>
+                                    </>
                                 )}
                                 <span>{cartItem.quantity}</span>
                                 <button
-                                    onClick={() => updateQuantity(cartItem.item._id, "increase")}
-                                    disabled={updatingItem === cartItem.item._id}
+                                    onClick={() =>
+                                        updateQuantity(cartItem.item._id, "increase")
+                                    }
                                 >
-                                    {updatingItem === cartItem.item._id ? (
-                                        <CircularProgress size={16} />
-                                    ) : (
-                                        <i className="fa-solid fa-plus"></i>
-                                    )}
+                                    <i className="fa-solid fa-plus"></i>
                                 </button>
 
                             </div>
