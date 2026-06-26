@@ -45,7 +45,7 @@ export default function Cart() {
 
     const updateQuantity = async (itemId, action) => {
         setUpdatingItem(itemId);
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         setCart((prevCart) => {
             const updatedItems = prevCart.items.map((item) => {
                 if (item.item._id === itemId) {
@@ -174,7 +174,7 @@ export default function Cart() {
                                     </>
                                 )}
                                 {updatingItem === cartItem.item._id ? (
-                                    <CircularProgress size={16} />
+                                    <CircularProgress size={20} />
                                 ) : (
                                     <span>{cartItem.quantity}</span>
                                 )}
