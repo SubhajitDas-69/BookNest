@@ -142,7 +142,7 @@ export default function Cart() {
         );
     }
     return (
-        <div className={`cart ${updatingItem ? "blurred disabled" : ""}`}>
+        <div className={`cart ${updatingItem ? "disabled" : ""}`}>
             {loading &&
             <div></div>
             }
