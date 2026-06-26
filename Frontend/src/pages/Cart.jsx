@@ -117,7 +117,7 @@ export default function Cart() {
             console.error("Delete failed", err);
         }
     };
-     if (loading || updatingItem) {
+     if (loading) {
         return (
             <div className="LoaderContainer">
                 <div className="Loader">
@@ -173,7 +173,11 @@ export default function Cart() {
                                         </button>
                                     </>
                                 )}
-                                <span>{cartItem.quantity}</span>
+                                {updatingItem === cartItem.item._id ? (
+                                    <CircularProgress size={16} />
+                                ) : (
+                                    <span>{cartItem.quantity}</span>
+                                )}
                                 <button
                                     onClick={() =>
                                         updateQuantity(cartItem.item._id, "increase")
