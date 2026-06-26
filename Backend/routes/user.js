@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const { saveRedirectUrl, authenticateLogin } = require("../middleware");
+const { saveRedirectUrl, authenticateLogin, validatePassword } = require("../middleware");
 const userController = require("../controllers/users");
 
-router.post("/signup", userController.signup);
+router.post("/signup", validatePassword, userController.signup);
 
 router.post("/login", saveRedirectUrl, authenticateLogin, userController.login);
 

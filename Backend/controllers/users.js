@@ -3,7 +3,13 @@ const User = require("../models/user");
 module.exports.signup = async (req, res, next) => {
     try {
         const { username, email, password } = req.body;
-
+        if (!validatePassword(password)) {
+            return res.status(400).json({
+                success: false,
+                message: "Password must be at least 8 characters long, include a number, a letter, and a special character.",
+                redirectTo: "/signup"
+            });
+        }
         const newUser = new User({ email, username });
         const registeredUser = await User.register(newUser, password);
 

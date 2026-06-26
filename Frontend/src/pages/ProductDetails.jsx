@@ -12,6 +12,7 @@ export default function ProductDetails() {
     const [comment, setComment] = useState('');
     const [rating, setRating] = useState(0);
     const [alert, setAlert] = useState({ msg: '', severity: '' });
+    const [addingToCart, setAddingToCart] = useState(false);
 
     const reviewPopup = () => setReviewPopupOpen(true);
     const closeReviewPopup = () => {
@@ -100,6 +101,7 @@ export default function ProductDetails() {
       }
 
     const addToCart = async () => {
+        setAddingToCart(true);
         try {
             const res = await fetch(`https://booknest-3ev5.onrender.com/cart/add/${product._id}`, {
                 method: "POST",
@@ -116,6 +118,8 @@ export default function ProductDetails() {
         } catch (err) {
             console.error("Add to cart error:", err);
             setAlert({ msg: "Error adding to cart", severity: "error" });
+        } finally {
+            setAddingToCart(false);
         }
     };
 
@@ -137,7 +141,16 @@ export default function ProductDetails() {
                     {currUser && currUser.role !== 'admin' && (
                         <>
 
-                            <button className="show-page-add-to-cart" onClick={addToCart}>Add to cart</button>
+                            <button className="show-page-add-to-cart" 
+                            onClick={addToCart}
+                            disabled={addingToCart}
+                            >
+                            {addingToCart ? (
+                                <CircularProgress size={20} thickness={5} color="inherit" />
+                            ) : (
+                                "Add to cart"
+                            )}
+                            </button>
 
                             <Link to={`/address/${product._id}?checkout=buyNow`}>
                                 <button className="button">BUY NOW</button>

@@ -44,7 +44,9 @@ export default function Signup() {
     <div className="signupPage">
       <form onSubmit={handleSubmit} noValidate>
         <h3>Sign Up</h3>
-        {error && <div className="alert alert-danger">{error}</div>}
+        {error && !error.toLowerCase().includes("password") && (
+          <div className="alert alert-danger">{error}</div>
+        )}
         {successMessage && <div className="alert alert-success">{successMessage}</div>}
 
         <div className="mb-3">
@@ -59,7 +61,13 @@ export default function Signup() {
 
         <div className="mb-3">
           <label className="form-label">Password</label>
-          <input type="password" name="password" className="form-control" required value={formData.password} onChange={handleChange} />
+          <input type="password" name="password" 
+          className={`form-control ${error.toLowerCase().includes("password") ? "is-invalid" : ""}`} 
+          required 
+          value={formData.password} onChange={handleChange} />
+          {error && error.toLowerCase().includes("password") && (
+            <div className="invalid-feedback">{error}</div>
+          )}
         </div>
 
         <button className="btn btn-success" type="submit">Signup</button>

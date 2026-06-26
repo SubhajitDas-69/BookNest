@@ -4,6 +4,22 @@ const ExpressError = require("./utils/ExpressError");
 const { reviewSchema, productsSchema } = require("./schema");
 const passport = require("passport");
 
+module.exports.validatePassword = (req, res, next) => {
+  const { password } = req.body;
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+  if (!regex.test(password)) {
+    return res.status(400).json({
+      success: false,
+      message:
+        "Password must be at least 8 characters long, include uppercase, lowercase, a number, and a special character.",
+      redirectTo: "/signup",
+    });
+  }
+
+  next();
+}
+
 module.exports.isLoggedin = (req, res, next) => {
     if(!req.isAuthenticated()) {
         req.session.redirectUrl = req.originalUrl;
