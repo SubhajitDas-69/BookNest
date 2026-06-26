@@ -126,6 +126,12 @@ export default function Cart() {
             </div>
         );
     }
+    {updatingItem && (
+        <div className="PageLoader">
+            <CircularProgress size={40} />
+            <p>Updating cart...</p>
+        </div>
+    )}
     if (!cart || cart.items.length === 0) {
         return (
             <div className="Emptycart">
@@ -136,7 +142,7 @@ export default function Cart() {
         );
     }
     return (
-        <div className="cart">
+        <div className={`cart ${updatingItem ? "disabled" : ""}`}>
             {loading &&
             <div></div>
             }
@@ -173,11 +179,7 @@ export default function Cart() {
                                         </button>
                                     </>
                                 )}
-                                {updatingItem === cartItem.item._id ? (
-                                    <CircularProgress size={14} thickness={8} color="secondary" />
-                                ) : (
-                                    <span>{cartItem.quantity}</span>
-                                )}
+                                <span>{cartItem.quantity}</span>
                                 <button
                                     onClick={() =>
                                         updateQuantity(cartItem.item._id, "increase")
@@ -203,6 +205,14 @@ export default function Cart() {
                     <button>Proceed to Buy</button>
                 </Link>
             </div>
+
+
+            {updatingItem && (
+                <div className="PageLoader">
+                    <CircularProgress size={40} />
+                    <p>Updating cart...</p>
+                </div>
+            )}
         </div>
     );
 }
