@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const [formData, setFormData] = useState({ username: '', password: '' });
@@ -41,24 +42,51 @@ export default function Login() {
   };
 
   return (
-    <div className="signupPage">
-      <form onSubmit={handleSubmit} noValidate>
-      <h3>Login</h3>
-        {error && <div className="alert alert-danger">{error}</div>}
-        {successMessage && <div className="alert alert-success">{successMessage}</div>}
+    <div className="loginPage d-flex justify-content-center align-items-center vh-100 bg-light">
+      <div className="card shadow p-4" style={{ width: '100%', maxWidth: '400px' }}>
+        <h3 className="text-center mb-4">Login</h3>
 
-        <div className="mb-3">
-          <label className="form-label">Username</label>
-          <input type="text" name="username" className="form-control" required value={formData.username} onChange={handleChange} />
+        {error && <div className="alert alert-danger text-center">{error}</div>}
+        {successMessage && <div className="alert alert-success text-center">{successMessage}</div>}
+
+        <form onSubmit={handleSubmit} noValidate>
+          <div className="mb-3">
+            <label className="form-label">Username</label>
+            <input 
+              type="text" 
+              name="username" 
+              className="form-control" 
+              required 
+              value={formData.username} 
+              onChange={handleChange} 
+              placeholder="Enter your username"
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Password</label>
+            <input 
+              type="password" 
+              name="password" 
+              className="form-control" 
+              required 
+              value={formData.password} 
+              onChange={handleChange} 
+              placeholder="Enter your password"
+            />
+          </div>
+
+          <button className="btn btn-success w-100" type="submit">
+            Login
+          </button>
+        </form>
+
+        <div className="text-center mt-3">
+          <small>
+            Don’t have an account? <Link to="/signup">Sign up</Link>
+          </small>
         </div>
-
-        <div className="mb-3">
-          <label className="form-label">Password</label>
-          <input type="password" name="password" className="form-control" required value={formData.password} onChange={handleChange} />
-        </div>
-
-        <button className="btn btn-success" type="submit">Login</button>
-      </form>
+      </div>
     </div>
   );
 }
